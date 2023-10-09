@@ -15,8 +15,9 @@ mesh = SubResource("SphereMesh_h0yem")
 shape = SubResource("SphereShape3D_g26no")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.75562)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.71302)
 current = true
+fov = 109.098
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.739525, 0.673129, 0, -0.673129, 0.739525, 0, 2, 0)
