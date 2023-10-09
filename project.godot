@@ -10,6 +10,6 @@ config_version=5
 
 [application]
 
-config/name="Balloon Popper"
+config/name="Mini Games"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
