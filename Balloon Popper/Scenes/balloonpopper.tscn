@@ -1,3 +1,22 @@
-[gd_scene format=3 uid="uid://26oth7k8o2r0"]
+[gd_scene load_steps=3 format=3 uid="uid://26oth7k8o2r0"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_h0yem"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_g26no"]
 
 [node name="Main" type="Node3D"]
+
+[node name="Balloon" type="Area3D" parent="."]
+
+[node name="Model" type="MeshInstance3D" parent="Balloon"]
+mesh = SubResource("SphereMesh_h0yem")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Balloon"]
+shape = SubResource("SphereShape3D_g26no")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.75562)
+current = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.739525, 0.673129, 0, -0.673129, 0.739525, 0, 2, 0)
