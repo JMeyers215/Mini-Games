@@ -1,3 +1,4 @@
 res://Balloon Popper/Scenes/balloonpopper.tscn
-res://Balloon Popper/Materials/balloonrubber.tres
 res://Balloon Popper/Scripts/balloon.gd
+res://Balloon Popper/Materials/balloonrubber.tres
+res://Balloon Popper/Scripts/balloonmanager.gd

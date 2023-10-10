@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7n2pg3vpn11a"]
+
+[ext_resource type="Script" path="res://Balloon Popper/Scripts/balloon.gd" id="1_2er1u"]
+[ext_resource type="Material" uid="uid://cp1esob1dp2wm" path="res://Balloon Popper/Materials/balloonrubber.tres" id="2_fs2mk"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_h0yem"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_g26no"]
+
+[node name="Balloon" type="Area3D"]
+script = ExtResource("1_2er1u")
+
+[node name="Model" type="MeshInstance3D" parent="."]
+material_override = ExtResource("2_fs2mk")
+mesh = SubResource("SphereMesh_h0yem")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+visible = false
+shape = SubResource("SphereShape3D_g26no")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

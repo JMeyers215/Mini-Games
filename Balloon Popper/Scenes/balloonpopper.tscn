@@ -1,29 +1,47 @@
-[gd_scene load_steps=5 format=3 uid="uid://26oth7k8o2r0"]
+[gd_scene load_steps=4 format=3 uid="uid://26oth7k8o2r0"]
 
-[ext_resource type="Material" uid="uid://cp1esob1dp2wm" path="res://Balloon Popper/Materials/balloonrubber.tres" id="1_e3blr"]
-[ext_resource type="Script" path="res://Balloon Popper/Scripts/balloon.gd" id="1_m7ahe"]
+[ext_resource type="Script" path="res://Balloon Popper/Scripts/balloonmanager.gd" id="1_vdemp"]
+[ext_resource type="PackedScene" uid="uid://c7n2pg3vpn11a" path="res://Balloon Popper/Scenes/balloon.tscn" id="2_trxpc"]
 
-[sub_resource type="SphereMesh" id="SphereMesh_h0yem"]
+[sub_resource type="LabelSettings" id="LabelSettings_yccf6"]
+font_size = 40
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_g26no"]
+[node name="Main" type="Node3D" node_paths=PackedStringArray("score_text")]
+script = ExtResource("1_vdemp")
+score_text = NodePath("ScoreText")
 
-[node name="Main" type="Node3D"]
+[node name="Balloon" parent="." instance=ExtResource("2_trxpc")]
+clicks_to_pop = 10
 
-[node name="Balloon" type="Area3D" parent="."]
-script = ExtResource("1_m7ahe")
+[node name="Balloon2" parent="." instance=ExtResource("2_trxpc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.37174, 0.709412, 0)
+clicks_to_pop = 3
 
-[node name="Model" type="MeshInstance3D" parent="Balloon"]
-material_override = ExtResource("1_e3blr")
-mesh = SubResource("SphereMesh_h0yem")
+[node name="Balloon3" parent="." instance=ExtResource("2_trxpc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.69033, 0.709412, 0)
+clicks_to_pop = 1
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Balloon"]
-visible = false
-shape = SubResource("SphereShape3D_g26no")
+[node name="Balloon4" parent="." instance=ExtResource("2_trxpc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.69033, -0.893968, 0)
+
+[node name="Balloon5" parent="." instance=ExtResource("2_trxpc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.20751, -0.893968, 0)
+clicks_to_pop = 7
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.71302)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.48484)
+projection = 1
 current = true
-fov = 109.098
+fov = 73.0
+size = 5.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.739525, 0.673129, 0, -0.673129, 0.739525, 0, 2, 0)
+
+[node name="ScoreText" type="Label" parent="."]
+offset_left = 18.0
+offset_top = 21.0
+offset_right = 104.0
+offset_bottom = 66.0
+text = "Score: 0"
+label_settings = SubResource("LabelSettings_yccf6")
