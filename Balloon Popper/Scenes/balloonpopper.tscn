@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://26oth7k8o2r0"]
+[gd_scene load_steps=4 format=3 uid="uid://26oth7k8o2r0"]
+
+[ext_resource type="Material" uid="uid://cp1esob1dp2wm" path="res://Balloon Popper/Materials/balloonrubber.tres" id="1_e3blr"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_h0yem"]
 
@@ -9,9 +11,11 @@
 [node name="Balloon" type="Area3D" parent="."]
 
 [node name="Model" type="MeshInstance3D" parent="Balloon"]
+material_override = ExtResource("1_e3blr")
 mesh = SubResource("SphereMesh_h0yem")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Balloon"]
+visible = false
 shape = SubResource("SphereShape3D_g26no")
 
 [node name="Camera3D" type="Camera3D" parent="."]
