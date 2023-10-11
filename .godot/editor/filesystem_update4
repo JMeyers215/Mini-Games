@@ -1,9 +1,3 @@
-res://Balloon Popper/Scenes/balloonpopper.tscn
-res://Balloon Popper/Scripts/balloon.gd
-res://Balloon Popper/Materials/balloonrubber.tres
-res://Balloon Popper/Scripts/balloonmanager.gd
-res://Physics Game/Scenes/Physics.tscn
-res://Physics Game/Scripts/PhysicsPlayer.gd
-res://Loops Game/Scenes/Loops.tscn
-res://Loops Game/Scripts/Loops.gd
 res://Collisions Game/Scenes/Collisions.tscn
+res://Collisions Game/Scripts/PlayerMovement.gd
+res://Collisions Game/Scenes/tree.tscn
